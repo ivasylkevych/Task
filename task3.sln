@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task3", "task3\task3.csproj", "{FA42EFD3-CB03-4CD8-9221-4A8495CB5BC9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserUsers", "Parser\ParserUsers.csproj", "{D671A700-B710-4768-81B7-054418578CE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parser", "Parser\Parser.csproj", "{D671A700-B710-4768-81B7-054418578CE7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserContacts", "ParserXml\ParserContacts.csproj", "{057EFB0E-4446-4F82-B61D-8DCE4B2A785F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserXml", "ParserXml\ParserXml.csproj", "{057EFB0E-4446-4F82-B61D-8DCE4B2A785F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserRaise", "ParserRaise\ParserRaise.csproj", "{012CCE27-86A5-4524-A772-98EF6AA2EA31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserRaise", "ParserRaise\ParserRaise.csproj", "{012CCE27-86A5-4524-A772-98EF6AA2EA31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

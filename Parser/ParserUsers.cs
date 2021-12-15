@@ -3,7 +3,7 @@
 // Copyright 2021
 // ----------------------------------------------------------------------
 
-namespace ParserUsers
+namespace Parser
 {
     #region Usings
 

@@ -1,4 +1,4 @@
-﻿namespace ParserUsers
+﻿namespace Parser
 {
     class Program
     {

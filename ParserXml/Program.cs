@@ -1,4 +1,4 @@
-﻿namespace ParserContacts
+﻿namespace ParserXml
 {
     class Program
     {

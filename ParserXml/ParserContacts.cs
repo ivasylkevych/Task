@@ -3,7 +3,7 @@
 // Copyright 2021
 // ----------------------------------------------------------------------
 
-namespace ParserContacts
+namespace ParserXml
 {
     #region Usings
 
