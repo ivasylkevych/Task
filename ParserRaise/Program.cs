@@ -6,7 +6,8 @@ namespace ParserRaise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ParserRaise parser = new ParserRaise();
+            parser.ParserXml("contactsRaise.xml");
         }
     }
 }

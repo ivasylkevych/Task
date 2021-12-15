@@ -15,7 +15,7 @@ namespace ParserRaise
     /// <summary>
     /// XML parser.
     /// </summary>
-    class ParserContacts
+    class ParserRaise
     {
         public void ParserXml(string filePath)
         {
