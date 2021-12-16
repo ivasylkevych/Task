@@ -1,76 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Contacts>
-	<Contact>
-		<Name>Patrick Hines</Name>
-		<Id>131305</Id>
-		<Phone Type="home">206-555-0144</Phone>
-		<Phone Type="work">425-555-0145</Phone>
-		<Address>
-			<Street1>123 Main St</Street1>
-			<City>Mercer Island</City>
-			<State>WA</State>
-			<Postal>68042</Postal>
-		</Address>
-		<NetWorth>10</NetWorth>
-	</Contact>
-	<Contact>
-		<Name>Gretchen Rivas</Name>
-		<Id>131303</Id>
-		<Phone Type="mobile">296-787-0163</Phone>
-		<Address>
-			<Street1>199 Main St</Street1>
-			<City>Dnipro</City>
-			<Postal>60002</Postal>
-		</Address>
-		<NetWorth>11</NetWorth>
-	</Contact>
-	<Contact>
-		<Name>Mike Black</Name>
-		<Id>131304</Id>
-		<Phone Type="private">999-555-9999</Phone>
-		<Address>
-			<Street1>001 Main St</Street1>
-			<City>Ternopil</City>
-			<Postal>00001</Postal>
-		</Address>
-		<NetWorth>30</NetWorth>
-	</Contact>
-	<Contact>
-		<Name>John Doe</Name>
-		<Id>131301</Id>
-		<Phone Type="home">223-845-1332</Phone>
-		<Address>
-			<Street1>Vasylkiska St</Street1>
-			<City>Kyiv</City>
-			<Postal>03022</Postal>
-		</Address>
-		<NetWorth>48</NetWorth>
-	</Contact>
-	<Contact>
-		<Name>Mike Black</Name>
-		<Id>131302</Id>
-		<Phone Type="new">144-931-1818</Phone>
-		<Address>
-			<Street1>Pecherska St</Street1>
-			<City>Kyiv</City>
-			<Postal>01011</Postal>
-		</Address>
-		<NetWorth>57</NetWorth>
-	</Contact>
-</Contacts>
+<DataBase>
+	<Contacts>
+		<Contact>
+			<Name>Patrick Hines</Name>
+			<Id>131305</Id>
+			<Phone Type="home">206-555-0144</Phone>
+			<Phone Type="work">425-555-0145</Phone>
+			<Address>
+				<Street1>123 Main St</Street1>
+				<City>Mercer Island</City>
+				<State>WA</State>
+				<Postal>68042</Postal>
+			</Address>
+			<NetWorth>10</NetWorth>
+		</Contact>
+		<Contact>
+			<Name>Gretchen Rivas</Name>
+			<Id>131303</Id>
+			<Phone Type="mobile">296-787-0163</Phone>
+			<Address>
+				<Street1>199 Main St</Street1>
+				<City>Dnipro</City>
+				<Postal>60002</Postal>
+			</Address>
+			<NetWorth>11</NetWorth>
+		</Contact>
+		<Contact>
+			<Name>Mike Black</Name>
+			<Id>131304</Id>
+			<Phone Type="private">999-555-9999</Phone>
+			<Address>
+				<Street1>001 Main St</Street1>
+				<City>Ternopil</City>
+				<Postal>00001</Postal>
+			</Address>
+			<NetWorth>30</NetWorth>
+		</Contact>
+		<Contact>
+			<Name>John Doe</Name>
+			<Id>131301</Id>
+			<Phone Type="home">223-845-1332</Phone>
+			<Address>
+				<Street1>Vasylkiska St</Street1>
+				<City>Kyiv</City>
+				<Postal>03022</Postal>
+			</Address>
+			<NetWorth>48</NetWorth>
+		</Contact>
+		<Contact>
+			<Name>Mike Black</Name>
+			<Id>131302</Id>
+			<Phone Type="new">144-931-1818</Phone>
+			<Address>
+				<Street1>Pecherska St</Street1>
+				<City>Kyiv</City>
+				<Postal>01011</Postal>
+			</Address>
+			<NetWorth>57</NetWorth>
+		</Contact>
+	</Contacts>
 
-<Raise>
-
-	<Id>ID 131301</Id>
-	<PersonalRaise>+$30</PersonalRaise>
-	<Id>ID 131302</Id>
-	<PersonalRaise>+$40</PersonalRaise>
-	<Id>ID 131303</Id>
-	<PersonalRaise>+$50</PersonalRaise>
-	<Id>ID 131304</Id>
-	<PersonalRaise>+$60</PersonalRaise>
-	<Id>ID 131305</Id>
-	<PersonalRaise>+$70</PersonalRaise>
-
-</Raise>
-
+	<Raise>
+		<PersonalRaise ID="ID 131301">+$30</PersonalRaise>
+		<PersonalRaise ID="ID 131302">+$40</PersonalRaise>
+		<PersonalRaise ID="ID 131303">+$50</PersonalRaise>
+		<PersonalRaise ID="ID 131304">+$60</PersonalRaise>
+		<PersonalRaise ID="ID 131305">+$70</PersonalRaise>
+	</Raise>
+</DataBase>
