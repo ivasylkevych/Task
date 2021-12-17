@@ -17,6 +17,10 @@ namespace ParserXml
     /// </summary>
     class ParserContacts
     {
+        /// <summary>
+        /// Parses XML file.
+        /// </summary>
+        /// <param name="filePath"></param>
         public void ParserXml(string filePath)
         {
             XmlDocument xml = new XmlDocument();

@@ -8,80 +8,93 @@ namespace ParserRaise
     #region Usings
 
     using System;
-    using System.Xml;
+    using System.Text.RegularExpressions;
+    using System.Xml.Linq;
 
     #endregion
 
     /// <summary>
-    /// XML parser.
+    /// The main class for XML parser with all properties and methods.
     /// </summary>
     class ParserRaise
     {
+        #region Properties and Indexers
+
+        /// <summary>
+        /// Stores person`s name.
+        /// </summary>
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// Stores person`s ID.
+        /// </summary>
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Stores raise which we connect with person's name by ID. 
+        /// </summary>
+        public int Raise { get; set; }
+
+        /// <summary>
+        /// Stores person`s ID converted in raise ID format.
+        /// </summary>
+        public string? RaiseId { get; set; }
+
+        /// <summary>
+        /// Stores person`s net worth.
+        /// </summary>
+        public int NetWorth { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Getting all the elements of xml file and put their values into properties. 
+        /// </summary>
+        /// <param name="filePath"></param>
         public void ParserXml(string filePath)
         {
-            XmlDocument xml = new XmlDocument();
-            xml.Load(filePath);
+            XDocument xDoc = XDocument.Load(filePath);
+            ParserRaise p = new ParserRaise();
 
-            // Getting root element.
-            XmlElement? rootElement = xml.DocumentElement;
-            if (rootElement != null)
+            foreach (XElement contactElement in xDoc.Element("DataBase").Element("Contacts").Elements("Contact"))
             {
-                // Check all nodes in root element.
-                foreach (XmlElement xnode in rootElement)
+                Console.WriteLine($"{contactElement.Element("Name").Value} - Net worth: ${contactElement.Element("NetWorth").Value}.");
+            }
+
+            while (true)
+            {
+                Console.Write($"\nWrite the person`s name to get data: ");
+                p.Name = Console.ReadLine();
+
+                if (p.Name == "")
                 {
-                    // Check all child nodes of the main node.
-                    foreach (XmlNode childnode in xnode.ChildNodes)
-                    {
-                        // If child node is "Name".
-                        if (childnode.Name == "Name")
-                        {
-                            Console.WriteLine($"Name: {childnode.InnerText}");
-                        }
-
-                        // If child node is "Phone".
-                        if (childnode.Name == "Phone")
-                        {
-                            XmlNode? attr = childnode.Attributes.GetNamedItem("Type");
-                            Console.WriteLine($"Phone ({attr?.Value}): {childnode.InnerText}");
-                        }
-
-                        // If child node is "Address".
-                        if (childnode.Name == "Address")
-                        {
-                            // To get full address using child elements of the node "Address"
-                            foreach (XmlNode subChild in childnode.ChildNodes)
-                            {
-                                if (subChild.Name == "Street1")
-                                {
-                                    Console.Write($"Address: {subChild.InnerText}, ");
-                                }
-                                if (subChild.Name == "City")
-                                {
-                                    Console.Write($"{subChild.InnerText}, ");
-                                }
-                                if (subChild.Name == "State")
-                                {
-                                    Console.Write($"{subChild.InnerText}, ");
-                                }
-                                if (subChild.Name == "Postal")
-                                {
-                                    Console.Write($"{subChild.InnerText}");
-                                }
-                            }
-                            Console.WriteLine();
-                        }
-
-                        // If child node is "NetWorth".
-                        if (childnode.Name == "NetWorth")
-                        {
-                            Console.WriteLine($"NetWorth: {childnode.InnerText}");
-                        }
-                    }
-
-                    // To create an empty line between contacts. 
-                    Console.WriteLine();
+                    continue;
                 }
+
+                foreach (XElement contactElement in xDoc.Element("DataBase").Element("Contacts").Elements("Contact"))
+                {
+                    if (contactElement.Element("Name").Value == p.Name)
+                    {
+                        p.NetWorth = Convert.ToInt32(contactElement.Element("NetWorth").Value);
+                        p.Id = contactElement.Element("Id").Value;
+                        p.RaiseId = $"ID {p.Id}";
+                    }
+                }
+
+                foreach (XElement raiseElement in xDoc.Element("DataBase").Element("Raise").Elements("PersonalRaise"))
+                {
+                    if (raiseElement.Attribute("ID").Value == p.RaiseId)
+                    {
+                        p.Raise = Convert.ToInt32(Regex.Match(raiseElement.Value, @"\d+").Value);
+                    }
+                }
+
+                Console.WriteLine($"\nName: {p.Name}. Raise: {p.Raise}. Total net worth: {p.NetWorth + p.Raise}.");
+                Console.WriteLine();
             }
         }
+        #endregion
     }
 }

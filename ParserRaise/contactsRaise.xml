@@ -26,7 +26,7 @@
 			<NetWorth>11</NetWorth>
 		</Contact>
 		<Contact>
-			<Name>Mike Black</Name>
+			<Name>Lukas Kim</Name>
 			<Id>131304</Id>
 			<Phone Type="private">999-555-9999</Phone>
 			<Address>
@@ -62,9 +62,9 @@
 
 	<Raise>
 		<PersonalRaise ID="ID 131301">+$30</PersonalRaise>
-		<PersonalRaise ID="ID 131302">+$40</PersonalRaise>
+		<PersonalRaise ID="ID 131302">+$5</PersonalRaise>
 		<PersonalRaise ID="ID 131303">+$50</PersonalRaise>
-		<PersonalRaise ID="ID 131304">+$60</PersonalRaise>
+		<PersonalRaise ID="ID 131304">+$160</PersonalRaise>
 		<PersonalRaise ID="ID 131305">+$70</PersonalRaise>
 	</Raise>
 </DataBase>

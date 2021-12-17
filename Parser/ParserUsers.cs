@@ -17,6 +17,10 @@ namespace Parser
     /// </summary>
     class ParserUsers
     {
+        /// <summary>
+        /// Parses XML file.
+        /// </summary>
+        /// <param name="filePath"></param>
         public void ParserXml(string filePath)
         {
             XmlDocument xDoc = new XmlDocument();
