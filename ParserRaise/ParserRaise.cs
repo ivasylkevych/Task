@@ -26,6 +26,11 @@ namespace ParserRaise
         public string? Name { get; set; }
 
         /// <summary>
+        /// Stores person`s full name.
+        /// </summary>
+        public string? FullName { get; set; }
+
+        /// <summary>
         /// Stores person`s ID.
         /// </summary>
         public string? Id { get; set; }
@@ -76,8 +81,9 @@ namespace ParserRaise
 
                 foreach (XElement contactElement in xDoc.Element("DataBase").Element("Contacts").Elements("Contact"))
                 {
-                    if (contactElement.Element("Name").Value == p.Name)
+                    if (contactElement.Element("Name").Value.Contains(p.Name))
                     {
+                        p.FullName = contactElement.Element("Name").Value;
                         p.NetWorth = Convert.ToInt32(contactElement.Element("NetWorth").Value);
                         p.Id = contactElement.Element("Id").Value;
                         p.RaiseId = $"ID {p.Id}";
@@ -97,7 +103,7 @@ namespace ParserRaise
                 }
                 else
                 {
-                    Console.WriteLine($"Raise: ${p.Raise}. Total net worth: ${p.NetWorth + p.Raise}.");
+                    Console.WriteLine($"Full name: {p.FullName}. Raise: ${p.Raise}. Total net worth: ${p.NetWorth + p.Raise}.");
                     Console.WriteLine();
                 }
                 
