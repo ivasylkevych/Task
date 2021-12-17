@@ -88,7 +88,7 @@ namespace ParserRaise
                 {
                     if (raiseElement.Attribute("ID").Value == p.RaiseId)
                     {
-                        p.Raise = Convert.ToInt32(Regex.Match(raiseElement.Value, @"\d+").Value);
+                        p.Raise = Convert.ToInt32(0+Regex.Match(raiseElement.Value, @"\d+").Value);
                     }
                 }
                 if (p.Id == "")
@@ -97,7 +97,7 @@ namespace ParserRaise
                 }
                 else
                 {
-                    Console.WriteLine($"Raise: {p.Raise}. Total net worth: {p.NetWorth + p.Raise}.");
+                    Console.WriteLine($"Raise: ${p.Raise}. Total net worth: ${p.NetWorth + p.Raise}.");
                     Console.WriteLine();
                 }
                 
