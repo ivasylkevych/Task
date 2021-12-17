@@ -65,6 +65,7 @@ namespace ParserRaise
 
             while (true)
             {
+                p.Id = "";
                 Console.Write($"\nName: ");
                 p.Name = Console.ReadLine();
 
@@ -90,9 +91,16 @@ namespace ParserRaise
                         p.Raise = Convert.ToInt32(Regex.Match(raiseElement.Value, @"\d+").Value);
                     }
                 }
-
-                Console.WriteLine($"Raise: {p.Raise}. Total net worth: {p.NetWorth + p.Raise}.");
-                Console.WriteLine();
+                if (p.Id == "")
+                {
+                    Console.WriteLine($"Can't find the name '{p.Name}' in database. Please try again.");
+                }
+                else
+                {
+                    Console.WriteLine($"Raise: {p.Raise}. Total net worth: {p.NetWorth + p.Raise}.");
+                    Console.WriteLine();
+                }
+                
             }
         }
         #endregion
