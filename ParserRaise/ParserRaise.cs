@@ -57,15 +57,15 @@ namespace ParserRaise
         {
             XDocument xDoc = XDocument.Load(filePath);
             ParserRaise p = new ParserRaise();
-
+            int num = 1;
             foreach (XElement contactElement in xDoc.Element("DataBase").Element("Contacts").Elements("Contact"))
             {
-                Console.WriteLine($"{contactElement.Element("Name").Value} - Net worth: ${contactElement.Element("NetWorth").Value}.");
+                Console.WriteLine($"{num++}. {contactElement.Element("Name").Value} - Net worth: ${contactElement.Element("NetWorth").Value}.");
             }
 
             while (true)
             {
-                Console.Write($"\nWrite the person`s name to get data: ");
+                Console.Write($"\nName: ");
                 p.Name = Console.ReadLine();
 
                 if (p.Name == "")
@@ -91,7 +91,7 @@ namespace ParserRaise
                     }
                 }
 
-                Console.WriteLine($"\nName: {p.Name}. Raise: {p.Raise}. Total net worth: {p.NetWorth + p.Raise}.");
+                Console.WriteLine($"Raise: {p.Raise}. Total net worth: {p.NetWorth + p.Raise}.");
                 Console.WriteLine();
             }
         }
