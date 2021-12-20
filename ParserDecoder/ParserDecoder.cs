@@ -21,27 +21,27 @@ namespace ParserDecoder
         #region Properties and Indexers
 
         /// <summary>
-        /// Stores person`s name.
+        /// Stores message ID.
         /// </summary>
         public string? MessageId { get; set; }
 
         /// <summary>
-        /// Stores person`s full name.
+        /// Stores file ID.
         /// </summary>
         public string? FileId { get; set; }
 
         /// <summary>
-        /// Stores person`s ID.
+        /// Stores line number.
         /// </summary>
         public string? LineNumber { get; set; }
 
         /// <summary>
-        /// Stores raise which we connect with person's name by ID. 
+        /// Stores line data. 
         /// </summary>
         public string? LineData { get; set; }
 
         /// <summary>
-        /// Stores person`s ID converted in raise ID format.
+        /// Stores file path.
         /// </summary>
         public string? FilePath { get; set; }
 
@@ -82,7 +82,7 @@ namespace ParserDecoder
                 }
                 if (p.FileId == "")
                 {
-                    Console.WriteLine($"Cannot find the message ID '{p.MessageId}' in database. Please try again.");
+                    Console.WriteLine($"Cannot find the message with ID '{p.MessageId}' in database. Please try again.");
                 }
                 else
                 {
