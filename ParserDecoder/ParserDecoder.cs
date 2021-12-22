@@ -56,37 +56,37 @@ namespace ParserDecoder
         public void ParserXml(string filePath)
         {
             XDocument xDoc = XDocument.Load(filePath);
-            ParserDecoder p = new ParserDecoder();
+            ParserDecoder parser = new ParserDecoder();
 
             while (true)
             {
-                p.FileId = "";
+                parser.FileId = "";
                 Console.Write("\nMessage ID: ");
-                p.MessageId = Console.ReadLine();
+                parser.MessageId = Console.ReadLine();
 
                 foreach (XElement messageElement in xDoc.Element("Dictionary").Element("Messages").Elements("Message"))
                 {
-                    if (messageElement.Attribute("ID").Value == p.MessageId)
+                    if (messageElement.Attribute("ID").Value == parser.MessageId)
                     {
-                        p.FileId = messageElement.Attribute("File").Value;
-                        p.LineNumber = messageElement.Attribute("Line").Value;
-                        p.LineData = messageElement.Value;
+                        parser.FileId = messageElement.Attribute("File").Value;
+                        parser.LineNumber = messageElement.Attribute("Line").Value;
+                        parser.LineData = messageElement.Value;
                     }
                 }
                 foreach (XElement fileElement in xDoc.Element("Dictionary").Element("SourceFiles").Elements("File"))
                 {
-                    if (fileElement.Attribute("ID").Value == p.FileId)
+                    if (fileElement.Attribute("ID").Value == parser.FileId)
                     {
-                        p.FilePath = fileElement.Value;
+                        parser.FilePath = fileElement.Value;
                     }
                 }
-                if (p.FileId == "")
+                if (parser.FileId == "")
                 {
-                    Console.WriteLine($"Cannot find the message with ID '{p.MessageId}' in database. Please try again.");
+                    Console.WriteLine($"Cannot find the message with ID '{parser.MessageId}' in database. Please try again.");
                 }
                 else
                 {
-                    Console.WriteLine($"File ID: {p.FileId}.\nLine number: {p.LineNumber}.\nLine data: {p.LineData}.\nFile path: {p.FilePath}.");
+                    Console.WriteLine($"File ID: {parser.FileId}.\nLine number: {parser.LineNumber}.\nLine data: {parser.LineData}.\nFile path: {parser.FilePath}.");
                 }
             }
         }
