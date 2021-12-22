@@ -5,12 +5,6 @@
 
 namespace ParserXml
 {
-    #region Usings
-
-
-
-    #endregion
-
     /// <summary>
     /// The main class for running parser.
     /// </summary>
@@ -19,7 +13,9 @@ namespace ParserXml
         /// <summary>
         /// Runs parser.
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="args">
+        /// Basic parameter for main method.
+        /// </param>
         static void Main(string[] args)
         {
             ParserContacts parser = new ParserContacts();

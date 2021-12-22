@@ -57,7 +57,9 @@ namespace ParserRaise
         /// <summary>
         /// Getting all the elements of xml file and put their values into properties. 
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="filePath">
+        /// The path to xml file.
+        /// </param>
         public void ParserXml(string filePath)
         {
             XDocument xDoc = XDocument.Load(filePath);

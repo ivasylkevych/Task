@@ -23,27 +23,27 @@ namespace ParserDecoder
         /// <summary>
         /// Stores message ID.
         /// </summary>
-        public string? MessageId { get; set; }
+        public string MessageId { get; set; }
 
         /// <summary>
         /// Stores file ID.
         /// </summary>
-        public string? FileId { get; set; }
+        public string FileId { get; set; }
 
         /// <summary>
         /// Stores line number.
         /// </summary>
-        public string? LineNumber { get; set; }
+        public string LineNumber { get; set; }
 
         /// <summary>
         /// Stores line data. 
         /// </summary>
-        public string? LineData { get; set; }
+        public string LineData { get; set; }
 
         /// <summary>
         /// Stores file path.
         /// </summary>
-        public string? FilePath { get; set; }
+        public string FilePath { get; set; }
 
         #endregion
 
@@ -52,7 +52,9 @@ namespace ParserDecoder
         /// <summary>
         /// Getting all the elements of xml file and put their values into properties. 
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="filePath">
+        /// The path to xml file.
+        /// </param>
         public void ParserXml(string filePath)
         {
             XDocument xDoc = XDocument.Load(filePath);
@@ -86,7 +88,7 @@ namespace ParserDecoder
                 }
                 else
                 {
-                    Console.WriteLine($"File ID: {parser.FileId}.\nLine number: {parser.LineNumber}.\nLine data: {parser.LineData}.\nFile path: {parser.FilePath}.");
+                    Console.WriteLine($"File ID:      {parser.FileId}.\nLine number:  {parser.LineNumber}.\nLine data:    {parser.LineData}.\nFile path:    {parser.FilePath}.");
                 }
             }
         }

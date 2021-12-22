@@ -20,7 +20,9 @@ namespace Parser
         /// <summary>
         /// Parses XML file.
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="filePath">
+        /// The path to xml file.
+        /// </param>
         public void ParserXml(string filePath)
         {
             XmlDocument xDoc = new XmlDocument();
