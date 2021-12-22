@@ -23,17 +23,17 @@ namespace ParserRaise
         /// <summary>
         /// Stores person`s name.
         /// </summary>
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Stores person`s full name.
         /// </summary>
-        public string? FullName { get; set; }
+        public string FullName { get; set; }
 
         /// <summary>
         /// Stores person`s ID.
         /// </summary>
-        public string? Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Stores raise which we connect with person's name by ID. 
@@ -43,7 +43,7 @@ namespace ParserRaise
         /// <summary>
         /// Stores person`s ID converted in raise ID format.
         /// </summary>
-        public string? RaiseId { get; set; }
+        public string RaiseId { get; set; }
 
         /// <summary>
         /// Stores person`s net worth.

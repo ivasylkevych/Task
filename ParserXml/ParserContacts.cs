@@ -29,7 +29,7 @@ namespace ParserXml
             xml.Load(filePath);
 
             // Getting root element.
-            XmlElement? rootElement = xml.DocumentElement;
+            XmlElement rootElement = xml.DocumentElement;
             if (rootElement != null)
             {
                 // Check all nodes in root element.
@@ -47,7 +47,7 @@ namespace ParserXml
                         // If child node is "Phone".
                         if (childnode.Name == "Phone")
                         {
-                            XmlNode? attr = childnode.Attributes.GetNamedItem("Type");
+                            XmlNode attr = childnode.Attributes.GetNamedItem("Type");
                             Console.WriteLine($"Phone ({attr?.Value}): {childnode.InnerText}");
                         }
 

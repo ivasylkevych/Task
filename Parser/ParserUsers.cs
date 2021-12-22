@@ -28,14 +28,14 @@ namespace Parser
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(filePath);
             // Getting root element.
-            XmlElement? xRoot = xDoc.DocumentElement;
+            XmlElement xRoot = xDoc.DocumentElement;
             if (xRoot != null)
             {
                 // Check all nodes in root element.
                 foreach (XmlElement xnode in xRoot)
                 {
                     // Getting attribut "name".
-                    XmlNode? attr = xnode.Attributes.GetNamedItem("name");
+                    XmlNode attr = xnode.Attributes.GetNamedItem("name");
                     Console.WriteLine(attr?.Value);
 
                     // Check all child nodes of the main node.
