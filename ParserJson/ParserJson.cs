@@ -31,6 +31,7 @@ namespace ParserJson
         {
             while (true)
             {
+                List<int> listIds = new List<int>();
                 Console.Write("\nPerson ID:  ");
                 int id = Convert.ToInt32(Console.ReadLine());
                 List<Contacts> contacts = JsonConvert.DeserializeObject<List<Contacts>>(File.ReadAllText(filePath));
@@ -41,9 +42,10 @@ namespace ParserJson
                     if (item.PersonId == id)
                     {
                         Console.WriteLine($"First name: {item.FirstName}.\nLast name:  {item.LastName}.\nCity:       {item.City}.");
+                        listIds.Add(item.PersonId);
                     }
                 }
-                if (id > contacts.Count)
+                if (listIds.IndexOf(id) < 0)
                 {
                     Console.WriteLine($"Cannot find the person with ID '{id}'. Please try again.");
                 }
