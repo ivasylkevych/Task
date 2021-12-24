@@ -47,7 +47,7 @@ namespace ParserJson
                 }
                 if (listIds.IndexOf(id) < 0)
                 {
-                    Console.WriteLine($"Cannot find the person with ID '{id}'. Please try again.");
+                    Console.WriteLine($"Cannot find the contact with ID '{id}'. Please try again.");
                 }
             }
         }

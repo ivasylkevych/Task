@@ -11,22 +11,22 @@ namespace ParserJson
     public class Contacts
     {
         /// <summary>
-        /// Stores person`s id number.
+        /// Stores contact`s ID.
         /// </summary>
         public int PersonId { get; set; }
 
         /// <summary>
-        /// Stores person`s first name.
+        /// Stores contact`s first name.
         /// </summary>
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Stores person`s last name.
+        /// Stores contact`s last name.
         /// </summary>
         public string LastName { get; set; }
 
         /// <summary>
-        /// Stores person`s city.
+        /// Stores contact`s city.
         /// </summary>
         public string City { get; set; }
     }
