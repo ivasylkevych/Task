@@ -35,17 +35,19 @@ namespace ParseJsonInterface
                 string input = Console.ReadLine();
                 int line = 0;
                 var json = JObject.Parse(File.ReadAllText(filePath));
-                if (!json.ToString().Contains(input))
-                {
-                    Console.WriteLine($"Cannot find title '{input}'. Please try again.");
-                    continue;
-                }
+                
                 if (input == "All")
                 {
                     Console.WriteLine(Regex.Replace($"{json}", "[}{,'\"]", ""));
                 }
-                
-                else
+               
+                else if (!json.ToString().Contains(input))
+                {
+                    Console.WriteLine($"Cannot find title '{input}'. Please try again.");
+                    continue;
+                }
+
+                else 
                 {
                     Console.Write("Line:   ");
                     line = Convert.ToInt32(Console.ReadLine()) - 1;
@@ -55,7 +57,7 @@ namespace ParseJsonInterface
                         if (item.Key == input)
                         {
                             IList<JToken> results = json[item.Key].Children().ToList();
-                            if (results.Count < line || line < 1)
+                            if (results.Count < line || line < 0)
                             {
                                 Console.WriteLine($"Cannot find line #{line+1}. Please input line number from a range: 1-{results.Count}.");
                                 break;
