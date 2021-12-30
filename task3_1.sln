@@ -11,11 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserXml", "ParserXml\Pars
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserRaise", "ParserRaise\ParserRaise.csproj", "{012CCE27-86A5-4524-A772-98EF6AA2EA31}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserDecoder", "ParserDecoder\ParserDecoder.csproj", "{73E17F89-31FC-44BC-9644-D3D3689013E8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserJson", "ParserJson\ParserJson.csproj", "{E16DFE14-F998-40B1-A03E-C8CEC0106BD0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseJsonInterface", "ParseJsonInterface\ParseJsonInterface.csproj", "{EF594A5A-14CA-4A2C-BFA7-3B166AC3FB87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserDecoder", "ParserDecoder\ParserDecoder.csproj", "{73E17F89-31FC-44BC-9644-D3D3689013E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +39,6 @@ Global
 		{73E17F89-31FC-44BC-9644-D3D3689013E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E17F89-31FC-44BC-9644-D3D3689013E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E17F89-31FC-44BC-9644-D3D3689013E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E16DFE14-F998-40B1-A03E-C8CEC0106BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E16DFE14-F998-40B1-A03E-C8CEC0106BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E16DFE14-F998-40B1-A03E-C8CEC0106BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E16DFE14-F998-40B1-A03E-C8CEC0106BD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF594A5A-14CA-4A2C-BFA7-3B166AC3FB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF594A5A-14CA-4A2C-BFA7-3B166AC3FB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF594A5A-14CA-4A2C-BFA7-3B166AC3FB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF594A5A-14CA-4A2C-BFA7-3B166AC3FB87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
