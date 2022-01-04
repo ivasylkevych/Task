@@ -36,7 +36,7 @@ namespace ParseJsonInterface
                 int line = 0;
                 var json = JObject.Parse(File.ReadAllText(filePath));
                 
-                if (input == "All")
+                if (input.ToLower() == "all")
                 {
                     Console.WriteLine(Regex.Replace($"{json}", "[}{,'\"]", ""));
                 }
