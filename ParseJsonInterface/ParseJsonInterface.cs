@@ -73,6 +73,11 @@ namespace ParseJsonInterface
                             if (itemChild.Key == input)
                             {
                                 IList<JToken> resultsChild = jsonChild[itemChild.Key].Children().ToList();
+                                if (resultsChild.Count < line || line < 0)
+                                {
+                                    Console.WriteLine($"Cannot find line #{line + 1}. Please input line number from a range: 1-{resultsChild.Count}.");
+                                    break;
+                                }
                                 Console.WriteLine(Regex.Replace($"Data:   {resultsChild[line]}", "[}{,'\"]", ""));
                                 break;
                             }
