@@ -41,7 +41,7 @@ namespace ParseJsonInterface
                     Console.WriteLine(Regex.Replace($"{json}", "[}{,'\"]", ""));
                 }
                
-                else if (!json.ToString().Contains(input))
+                else if (!json.ToString().Contains(input) || input.Length < 3)
                 {
                     Console.WriteLine($"Cannot find title '{input}'. Please try again.");
                     continue;
