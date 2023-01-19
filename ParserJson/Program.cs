@@ -1,10 +1,16 @@
 ﻿// ----------------------------------------------------------------------
 // Here will be Header
-// Copyright 2021
+// Copyright 2022
 // ----------------------------------------------------------------------
 
 namespace ParserJson
 {
+    #region Usings
+
+    using System;
+
+    #endregion
+
     /// <summary>
     /// The main class for running parser.
     /// </summary>
@@ -18,8 +24,23 @@ namespace ParserJson
         /// </param>
         static void Main(string[] args)
         {
-            ParserJson parser = new ParserJson();
-            parser.ParseJson("contacts.json");
+            while (true)
+            {
+                Console.Write("\nWebsite URL: ");
+                var url = Console.ReadLine();
+                ParseJsonData parser = new ParseJsonData();
+
+                try
+                {
+                    var json = parser.GetJsonFromUrl(url);
+                    parser.ParseJson(json);
+                }
+                catch
+                {
+                    Console.WriteLine("Please provide the correct URL");
+                }
+                
+            }
         }
     }
 }
