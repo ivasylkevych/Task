@@ -1,4 +1,4 @@
-﻿namespace ParserJson
+﻿namespace Models.ParserJson
 {
     public class ProductsData
     {

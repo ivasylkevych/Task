@@ -9,6 +9,7 @@ namespace ParserJson
     #region Usings
 
     using ConsoleTables;
+    using Models.ParserJson;
     using System.Linq;
     using System.Net;
 
