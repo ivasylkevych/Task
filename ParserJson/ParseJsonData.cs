@@ -10,6 +10,7 @@ namespace ParserJson
 
     using ConsoleTables;
     using Models.ParserJson;
+    using System;
     using System.Linq;
     using System.Net;
 
@@ -30,16 +31,12 @@ namespace ParserJson
         {
             var productsData = Newtonsoft.Json.JsonConvert.DeserializeObject<ProductsData>(jsonString);
             var table = new ConsoleTable("Product name", "Category name");
+            var sortedCategories = productsData.Categories.OrderBy(category => category.Id).ToArray();
 
-            foreach (var product in productsData.Products.OrderBy(product => product.CategoryId))
+            foreach (var product in productsData.Products)
             {
-                foreach (var category in productsData.Categories.OrderBy(category => category.Id))
-                {
-                    if (product.CategoryId == category.Id)
-                    {
-                        table.AddRow(product.Name, category.Name);
-                    }
-                }
+                var categoryIndex = Array.BinarySearch(sortedCategories.Select(category => category.Id).ToArray(), product.CategoryId);
+                table.AddRow(product.Name, sortedCategories[categoryIndex].Name);
             }
 
             table.Write();
